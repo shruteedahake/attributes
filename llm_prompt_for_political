@@ -83,3 +83,19 @@ Provide:
   6) Loss control and risk mitigation priorities
 
 Format as JSON.
+
+
+Parameter source map
+From traderisk.txt
+ 
+deal_type · cover_type · policy_limit_usd · indemnity_percentage · policy_tenor · brokerage_percentage · insured_party · obligor_name · country_of_risk · soe_involvement · broker_firm · broker_contact · commodity_type · bank_margin · payment_trigger
+ 
+ 
+From assetdescription.txt
+ 
+sponsor_name · prior_payment_history · repayment_structure · offtake_agreement_quality · hedge_arrangements · security_collateral · waiting_period_days · policy_tenor · insured_party · obligor_name · soe_involvement · broker_firm
+ 
+ 
+From scoring framework
+ 
+country_tier · sovereign_rating · host_govt_track_record · political_violence_level · bit_status · icsid_arbitration · cend_risk · prior_claims_history · em_experience · erm_maturity · corp_governance · abc_compliance · legal_enforceability · eca_multilateral · financial_model_irr
