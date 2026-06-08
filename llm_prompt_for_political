@@ -1,0 +1,85 @@
+System Prompt-
+You are a senior Credit and Political Risk Insurance (CPRI) underwriter with 20+ years of experience across trade finance, structured credit, and political risk lines. You specialise in sovereign and sub-sovereign obligors, cross-border trade transactions, and project-level non-payment exposures across emerging markets. Analyze the following risk data and provide structured advisory.
+
+User Prompt-
+Analyze this CPRI submission:
+
+— Submission & Deal —
+• Deal Type: {deal_type}
+• Coverage Required: {cover_type}
+• Policy Limit (USD): {policy_limit_usd}
+• Indemnity %: {indemnity_percentage}
+• Waiting Period (days): {waiting_period_days}
+• Policy Tenor / Period: {policy_tenor}
+• Brokerage %: {brokerage_percentage}
+
+— Parties —
+• Insured / Confirming Party: {insured_party}
+• Obligor / Counterparty: {obligor_name}
+• Sponsor / Ultimate Owner: {sponsor_name}
+• State-owned Entity Involvement: {soe_involvement}
+• Broker / Intermediary: {broker_firm}, {broker_contact}
+
+— Country & Sovereign Risk —
+• Country of Risk: {country_of_risk}
+• Country Tier (OECD / EIU Score): {country_tier}
+• Sovereign Credit Rating (S&P equivalent): {sovereign_rating}
+• Host Government Track Record with Foreign Investors: {host_govt_track_record}
+• Political Violence Risk Level: {political_violence_level}
+• Currency Inconvertibility Risk Level: {currency_inconvertibility_level}
+
+— Obligor / Counterparty Risk —
+• Obligor Credit Rating: {obligor_credit_rating}
+• Debt / EBITDA (Leverage): {debt_ebitda}
+• DSCR / Interest Coverage: {dscr}
+• Sponsor Financial Strength: {sponsor_financial_strength}
+• Prior Payment / Relationship History: {prior_payment_history}
+
+— Deal Structure & Legal —
+• Governing Law & Dispute Resolution: {governing_law}
+• BIT (Bilateral Investment Treaty) Status: {bit_status}
+• Stabilisation Clause: {stabilisation_clause}
+• Sovereign Guarantee Quality: {sovereign_guarantee}
+• ICSID / Arbitration Enforcement Regime: {icsid_arbitration}
+• Legal Enforceability Opinion Quality: {legal_enforceability}
+• ECA / Multilateral Co-participation: {eca_multilateral}
+
+— Coverage & Peril Risk —
+• CEND / Expropriation Risk: {cend_risk}
+• Sovereign Non-Payment / Contract Frustration: {sovereign_nonpayment_risk}
+• Currency Inconvertibility (Transfer Restriction): {currency_transfer_risk}
+• Political Violence (Physical Damage / BI): {pv_physical_risk}
+• Forced Abandonment Risk: {forced_abandonment_risk}
+
+— Transaction & Financial Strength —
+• Commodity / Goods Type: {commodity_type}
+• Offtake Agreement Quality: {offtake_agreement_quality}
+• Security Package & Collateral: {security_collateral}
+• Repayment Structure: {repayment_structure}
+• Financial Model IRR and Viability: {financial_model_irr}
+• Hedge Arrangements (Currency / Commodity): {hedge_arrangements}
+• Payment Terms & Trigger Event: {payment_trigger}
+• Bank Margin / Pricing: {bank_margin}
+
+— Insured & Broker Quality —
+• Prior CPRI Claims History (5 years): {prior_claims_history}
+• Emerging Market / CPRI Experience (Insured): {em_experience}
+• Risk Management / ERM Maturity (Insured): {erm_maturity}
+• Corporate Governance & Financial Transparency: {corp_governance}
+• ABC Compliance & Integrity Record: {abc_compliance}
+
+— Supporting Documentation —
+• Documents Available to Underwriters: {supporting_documents}
+• Third-party Reports Referenced: {third_party_reports}
+
+• Rules Engine Score: using your analysis, provide a Risk Score on a scale of 1000
+
+Provide:
+  1) Executive risk narrative
+  2) Top 3 risk drivers
+  3) Coverage gaps and missing information
+  4) Underwriting concerns and deal structure red flags
+  5) Sublimit / indemnity / waiting period recommendations
+  6) Loss control and risk mitigation priorities
+
+Format as JSON.
