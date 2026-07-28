@@ -1,0 +1,734 @@
+Task: Perform a Complete Gap Analysis to Extend the Existing Commercial Property Claims Platform to Motor Insurance
+
+Background
+
+The current claims platform has been developed exclusively for the Commercial Property Line of Business (LOB).
+
+The platform contains multiple AI agents (MCP/FastAPI based) that together handle the complete claims lifecycle, including but not limited to:
+
+* FNOL
+* Document Classification
+* Data Extraction
+* Eligibility Verification
+* Policy Coverage Verification
+* Risk Assessment
+* Fraud Screening
+* Claim Classification
+* Claim Routing
+* Damage Assessment
+* Evidence Validation
+* External Data Verification
+* Reserve Recommendation
+* Repair vs Replacement
+* Settlement Recommendation
+* Payment Eligibility
+* Payment Trigger
+* Communication Agent
+* Other supporting agents
+
+The complete codebase will be provided.
+
+The objective is NOT to rewrite the project.
+
+The objective is to identify everything that must change so that the platform can support Motor Insurance Claims in addition to Commercial Property.
+
+⸻
+
+Your Task
+
+Perform a deep architectural review of the complete codebase and identify every place where Commercial Property assumptions exist.
+
+Assume we want to support both
+
+* Commercial Property
+* Motor Insurance
+
+without breaking the existing implementation.
+
+⸻
+
+Analyse Every Agent Individually
+
+For every agent, identify:
+
+1. Current Commercial Property Logic
+
+Explain
+
+* what the current agent is doing
+* which Commercial Property assumptions are hardcoded
+* why those assumptions do not work for Motor Insurance
+
+⸻
+
+2. Motor Insurance Requirements
+
+For Motor Insurance identify
+
+* new functionality
+* additional validations
+* additional business rules
+* additional calculations
+* additional mandatory fields
+* optional fields
+* additional APIs
+* additional external integrations
+* new document types
+* new prompts
+* new LLM context
+* new decision logic
+
+⸻
+
+3. Existing Logic That Can Be Reused
+
+Clearly mention
+
+* which functions remain unchanged
+* which modules are reusable
+* which prompts only need modification
+* which business rules are common across both LOBs
+
+⸻
+
+4. Code Changes Required
+
+For every agent list
+
+* new functions required
+* existing functions to modify
+* new helper utilities
+* new configuration
+* prompt changes
+* routing changes
+* orchestration changes
+* new validation logic
+
+Do NOT write code.
+
+Only explain what should change.
+
+⸻
+
+FNOL Analysis
+
+Pay special attention to FNOL.
+
+Identify
+
+Commercial Property mandatory fields
+
+and
+
+Motor mandatory fields.
+
+For example
+
+Vehicle Information
+
+VIN
+
+Registration Number
+
+Vehicle Make
+
+Vehicle Model
+
+Vehicle Year
+
+Engine Number
+
+Chassis Number
+
+Driver Details
+
+Driving Licence
+
+Accident Date
+
+Accident Location
+
+Police FIR
+
+Third Party Details
+
+Injuries
+
+Passenger Count
+
+Tow Requirement
+
+Garage Selection
+
+Repair Preference
+
+Vehicle Photos
+
+Dashcam Footage
+
+Telematics
+
+Roadside Assistance
+
+Loss Type
+
+Accident Type
+
+Collision
+
+Theft
+
+Fire
+
+Flood
+
+Vandalism
+
+Natural Disaster
+
+Hit and Run
+
+Glass Damage
+
+Animal Collision
+
+etc.
+
+Mention every field that should be mandatory or optional.
+
+⸻
+
+Document Analysis
+
+Compare Commercial Property documents with Motor Insurance documents.
+
+Identify
+
+new document types such as
+
+Driving Licence
+
+RC Book
+
+Insurance Certificate
+
+Vehicle Inspection Report
+
+Repair Estimate
+
+Garage Invoice
+
+Police FIR
+
+Medical Reports
+
+Vehicle Images
+
+Dashcam Video
+
+Theft Documents
+
+Recovery Report
+
+Surveyor Report
+
+Traffic Camera Evidence
+
+Tow Receipt
+
+Fitness Certificate
+
+PUC
+
+Vehicle Ownership Transfer Documents
+
+etc.
+
+Explain which existing document classifiers must be updated.
+
+⸻
+
+Policy Coverage Verification
+
+Analyse how the current Property policy verification differs from Motor policies.
+
+Explain
+
+new coverages
+
+Own Damage
+
+Third Party
+
+Comprehensive
+
+Zero Depreciation
+
+Engine Protection
+
+Consumables
+
+Roadside Assistance
+
+Personal Accident Cover
+
+Passenger Cover
+
+NCB
+
+Add-ons
+
+Deductibles
+
+IDV
+
+Total Loss
+
+Constructive Total Loss
+
+Salvage
+
+Coverage Limits
+
+Waiting Periods
+
+Exclusions
+
+Driver Restrictions
+
+Vehicle Usage Restrictions
+
+Commercial vs Private Vehicle
+
+Geographical Restrictions
+
+Driver Age Restrictions
+
+Licence Validation
+
+etc.
+
+⸻
+
+Damage Assessment
+
+Explain how Motor damage assessment differs from Property.
+
+Include
+
+vehicle parts
+
+repair labour
+
+paint cost
+
+garage estimates
+
+OEM vs aftermarket parts
+
+repair hours
+
+structural damage
+
+airbags
+
+engine
+
+transmission
+
+wheel alignment
+
+ADAS calibration
+
+battery inspection (EV)
+
+high voltage inspection
+
+salvage
+
+roadworthiness
+
+etc.
+
+⸻
+
+Fraud Detection
+
+Identify additional fraud indicators for Motor Insurance such as
+
+staged accidents
+
+multiple claims
+
+VIN mismatch
+
+RC mismatch
+
+odometer tampering
+
+driver mismatch
+
+garage fraud
+
+repair inflation
+
+duplicate invoices
+
+fake FIR
+
+telematics mismatch
+
+location inconsistency
+
+prior damage
+
+duplicate vehicle photos
+
+etc.
+
+⸻
+
+Reserve Recommendation
+
+Explain how reserve calculation should change for Motor Insurance.
+
+Include
+
+repair estimate
+
+vehicle value
+
+IDV
+
+garage quotation
+
+labour
+
+parts
+
+salvage value
+
+towing
+
+storage
+
+medical expenses
+
+third party liability
+
+legal expenses
+
+rental reimbursement
+
+supplements
+
+taxes
+
+etc.
+
+⸻
+
+Settlement Recommendation
+
+Identify all additional Motor-specific settlement logic.
+
+Include
+
+repair approval
+
+cash settlement
+
+total loss
+
+constructive total loss
+
+IDV settlement
+
+salvage deduction
+
+depreciation
+
+deductible
+
+betterment
+
+parts depreciation
+
+GST
+
+third party payment
+
+medical reimbursement
+
+garage payment
+
+network garage
+
+non-network garage
+
+cashless settlement
+
+etc.
+
+⸻
+
+Communication Agent
+
+Identify Motor-specific communication flows such as
+
+garage appointment
+
+vehicle inspection
+
+surveyor visit
+
+repair approval
+
+repair completion
+
+vehicle pickup
+
+cashless approval
+
+payment updates
+
+salvage pickup
+
+third party updates
+
+roadside assistance
+
+claim closure
+
+etc.
+
+⸻
+
+Database Review
+
+Review the entire database schema.
+
+Identify
+
+Existing Tables
+
+Explain
+
+which tables remain unchanged
+
+which tables require new columns
+
+which tables should become generic
+
+which tables are Property specific
+
+⸻
+
+New Tables Required
+
+Recommend all new Motor tables.
+
+For each table provide
+
+Purpose
+
+Suggested table name
+
+Suggested columns
+
+Primary Key
+
+Foreign Keys
+
+Relationships
+
+Indexes
+
+Do NOT generate SQL.
+
+Only provide schema recommendations.
+
+Possible examples include
+
+vehicle_details
+
+driver_details
+
+accident_details
+
+garage_details
+
+garage_estimates
+
+repair_orders
+
+repair_parts
+
+repair_labour
+
+vehicle_inspections
+
+telematics_data
+
+roadside_assistance
+
+motor_policy_coverages
+
+motor_claim_photos
+
+survey_reports
+
+salvage_details
+
+vehicle_damage_mapping
+
+accident_witnesses
+
+police_reports
+
+third_party_claims
+
+medical_claims
+
+tow_details
+
+vehicle_history
+
+etc.
+
+Also identify whether any existing Commercial Property tables should be generalized instead of creating duplicate Motor tables.
+
+⸻
+
+APIs
+
+Identify
+
+new external integrations that may be required
+
+Examples
+
+RTO
+
+VIN Decoder
+
+Licence Verification
+
+Telematics
+
+Garage Network
+
+Surveyor Portal
+
+Roadside Assistance
+
+Police Verification
+
+Vehicle History
+
+OEM Parts Catalogue
+
+Repair Cost Database
+
+Maps
+
+Weather
+
+EV Battery Health
+
+etc.
+
+⸻
+
+Prompts
+
+Review every LLM prompt.
+
+Identify
+
+Commercial Property terminology
+
+Property-specific assumptions
+
+Property-specific examples
+
+Property-specific outputs
+
+Recommend how prompts should be redesigned so they support multiple LOBs.
+
+⸻
+
+Configuration
+
+Identify where configuration should become LOB-driven instead of hardcoded.
+
+Examples
+
+validation rules
+
+mandatory fields
+
+prompt templates
+
+database mappings
+
+business rules
+
+API routing
+
+document mappings
+
+coverage mappings
+
+claim workflows
+
+decision trees
+
+⸻
+
+Architecture Recommendations
+
+Recommend the best long-term architecture for supporting multiple Lines of Business.
+
+The solution should avoid code duplication.
+
+Prefer configurable architecture wherever possible.
+
+Explain
+
+* Strategy Pattern
+* Rule Engine
+* Configuration-driven workflows
+* LOB-specific plugins/modules
+* Prompt templates
+* Validation configuration
+* Database abstraction
+* Shared services
+
+if applicable.
+
+⸻
+
+Final Deliverable
+
+Produce a structured report containing
+
+1. Executive Summary
+2. Agent-wise Gap Analysis
+3. Database Changes
+4. API Changes
+5. Prompt Changes
+6. Business Rule Changes
+7. Validation Changes
+8. New Mandatory Fields
+9. New Optional Fields
+10. New Tables
+11. Existing Tables to Modify
+12. Configuration Changes
+13. Architecture Recommendations
+14. Estimated Development Effort (Low / Medium / High) for each agent
+15. Priority Order in which changes should be implemented
+
+The objective is to create a complete roadmap for extending the existing Commercial Property claims platform into a production-ready Motor Insurance claims platform while maximizing reuse of the existing codebase and minimizing duplication.
+
+If there are any calculations give us the formula as well for Motor LOB, if there are any decesions made currently in commercial propoerty lob code tell me for motor lob as well for each Individual Agent in each persona
